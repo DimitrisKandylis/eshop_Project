@@ -37,7 +37,7 @@
       </form>
     </div>
     <!-- H lista me ta stoixeia epikoinwnias -->
-    <div class="col-md-5">
+    <div class="col-md-5 col-sm-12 col-xs-12" id="contact_list">
       <ul class="fa-ul">
         <li><span style="width: 3.14285714em;" class="fa-li"><i class="fa fa-map-marker"></i></span><label>Celeste Slater
         606-3727 Ullamcorper. Street

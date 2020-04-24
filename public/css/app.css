@@ -160,7 +160,7 @@
 
 .fa {
   font-size: 52px !important;
-  color: #703F21;
+  color: #222;
 }
 
 .fa:hover {
@@ -452,4 +452,19 @@
   background-repeat: no-repeat;
   padding-right: 0 !important;
   padding-left: 0 !important;
+}
+
+@media screen and (max-width: 960px) {
+	#trdli {
+    margin-top: 4%;
+  }
+  #frdli {
+    margin-top: 10%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+	#contact_list {
+    margin-top: 12%;
+    margin-bottom: 4%;
 }
