@@ -38,6 +38,9 @@
         </nav>
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" id="banner">
             <div class="container">
+
+
+
                 <a class="navbar-brand" href="{{ route('homepage_index') }}">
                     <!-- <img src="{{ asset('photos/sample-logo2.png') }}" width="" height="80" id="banner_logo"></img> -->
                     <h2 style="color:#fff;">Lorem</h2>
@@ -47,53 +50,50 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
 
-                    </ul>
+                    <!-- Left Side Of Navbar -->
+
+                      <ul class="navbar-nav mr-auto" style="margin-left:35%;">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('homepage_index') }}">{{ __('Home') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about_us">{{ __('About') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">{{ __('Contact') }}</a>
+                        </li>
+                      </ul>
+
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                      <li class="nav-item">
-                          <a class="nav-link" href="{{ route('homepage_index') }}">{{ __('Home') }}</a>
-                      </li>
-                      <!--
-                      <li class="nav-item">
-                          <a class="nav-link" href="/services">{{ __('Services') }}</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/portfolio">{{ __('Portfolio') }}</a>
-                      </li>
-                    -->
-                      <li class="nav-item">
-                          <a class="nav-link" href="/about_us">{{ __('About us') }}</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="/contact">{{ __('Contact') }}</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="{{ route('shop.index') }}"><img src="{{url('/photos/bag.png')}}" width="25px"></img></a>
-                      </li>
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}"><img src="{{url('/photos/user.png')}}" width="27px"></img></a>
-                            </li>
-                        @else
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('profile.index') }}"><img src="{{url('/photos/user.png')}}" width="27px"></img></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><img src="{{url('/photos/logoff.png')}}" width="27px"></img></a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </li>
-                        @endguest
 
-                    </ul>
+                      <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('shop.index') }}"><img src="{{url('/photos/bag.png')}}" width="25px"></img></a>
+                        </li>
+                          <!-- Authentication Links -->
+                          @guest
+                              <li class="nav-item">
+                                  <a class="nav-link" href="{{ route('login') }}"><img src="{{url('/photos/user.png')}}" width="27px"></img></a>
+                              </li>
+                          @else
+                              <li class="nav-item">
+                                  <a class="nav-link" href="{{ route('profile.index') }}"><img src="{{url('/photos/user.png')}}" width="27px"></img></a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><img src="{{url('/photos/logoff.png')}}" width="27px"></img></a>
+                                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                      @csrf
+                                  </form>
+                              </li>
+                          @endguest
+                      </ul>
+
+
                 </div>
-            </div>
+
+          </div>
         </nav>
 
         <main class="py-4" style="padding-top: 0rem!important;">

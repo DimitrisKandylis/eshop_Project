@@ -24,8 +24,8 @@
     </div>
   </div>
 </div>
-<div class="container" style="margin-bottom:4% !important;max-width: 87% !important;" id="serv_dark">
-  <div class="row" style="margin-left:7%;margin-right:7%;">
+<div class="container" style="margin-bottom:4% !important;max-width: 100% !important;" id="serv_dark">
+  <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-top:8%;padding-bottom:11%;text-align:center;">
       <img src="{{url('/photos/beer.png')}}" width="20%" style="margin-bottom:2%;"></img>
       <h4 style="margin-bottom:2%;">Our Products</h4>
@@ -36,8 +36,8 @@
       <br>
       <a class="btn btn-md btn-primary" href="{{ route('shop.index') }}" style="margin-top:2%;">Visit our Shop</a>
     </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-      <img class="hom_img1" src="{{url('https://images.unsplash.com/photo-1571527036651-5860024b2351?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')}}" width="100%">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="home_col_beer">
+
     </div>
   </div>
 </div>
@@ -121,7 +121,7 @@
     </div>
   </div>
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="newsletter_img">
-    <img src="https://images.unsplash.com/photo-1572916108357-39ee1f59e007?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" width="100%"></img>
+  
   </div>
 </div>
 @endsection

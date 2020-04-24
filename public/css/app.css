@@ -431,6 +431,9 @@
 }
 
 #newsletter_img {
+  background-image: url('https://images.unsplash.com/photo-1572916108357-39ee1f59e007?ixlib=rb-1.2.1');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
   padding-right: 0!important;
   padding-left: 0!important;
 }
@@ -441,4 +444,12 @@
 
 #latest_div {
   text-align: center;
+}
+
+#home_col_beer {
+  background-image: url('https://images.unsplash.com/photo-1523567830207-96731740fa71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
 }
