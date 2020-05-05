@@ -53,7 +53,7 @@
 
                     <!-- Left Side Of Navbar -->
 
-                      <ul class="navbar-nav mr-auto" style="margin-left:35%;">
+                      <ul class="navbar-nav mr-auto" id="main_navigation" style="margin-left:35%;">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('homepage_index') }}">{{ __('Home') }}</a>
                         </li>

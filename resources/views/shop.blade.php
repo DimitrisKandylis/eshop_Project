@@ -22,7 +22,7 @@
         <div class="card-body">
           <div class="row" style="margin-left:-25px;">
           @foreach ($products as $product)
-            <div class="col-md-4 product_col">
+            <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 product_col">
               <div class="card" style="width: 18rem;">
                 <img class="card-img-top" src="{{$product->img}}" alt="Card image cap">
                 <div class="card-body">

@@ -40,12 +40,10 @@
     <div class="col-md-5 col-sm-12 col-xs-12" id="contact_list">
       <ul class="fa-ul">
         <li><span style="width: 3.14285714em;" class="fa-li"><i class="fa fa-map-marker"></i></span><label>Celeste Slater
-        606-3727 Ullamcorper. Street
-        Roseville NH 11523
-        (786) 713-8616</label></li>
+        606-3727 Ullamcorper</label></li>
         <li id="srdli"><span style="width: 3.14285714em;" class="fa-li"><i class="fa fa-envelope-o"></i></span><label>info@lorem.com</label></li>
-        <li id="trdli"><span style="width: 3.14285714em;" class="fa-li"><i class="fa fa-mobile"></i></span><label>+66 859038213</label></li>
         <li id="frdli"><span style="width: 3.14285714em;" class="fa-li"><i class="fa fa-globe"></i></span><label>twitter.com/LoremOfficial</label></li>
+        <li id="trdli"><span style="width: 3.14285714em;" class="fa-li"><i class="fa fa-mobile"></i></span><label>+66 859038213</label></li>
       </ul>
     </div>
   </div>

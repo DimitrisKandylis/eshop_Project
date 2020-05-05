@@ -161,6 +161,7 @@
 .fa {
   font-size: 52px !important;
   color: #222;
+  transition-duration: 0.5s;
 }
 
 .fa:hover {
@@ -174,18 +175,6 @@
 
 .fa-map-marker {
   font-size: 62px !important;
-}
-
-#frdli {
-  margin-top: 7%;
-}
-
-#trdli {
-  margin-top: 2%;
-}
-
-#srdli {
-  margin-top: -4%;
 }
 
 #footer {
@@ -388,11 +377,6 @@
 .about_us_img {
   border-radius: 7px;
   box-shadow: 2px 2px 5px black;
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
 }
 
 .hr_style {
@@ -454,6 +438,10 @@
   padding-left: 0 !important;
 }
 
+.fa-li:nth-child(n+2) {
+  margin-top:3%;
+}
+
 @media screen and (max-width: 960px) {
 	#trdli {
     margin-top: 4%;
@@ -463,8 +451,63 @@
   }
 }
 
+@media screen and (min-width: 993px) {
+  .about_us_img {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #main_navigation {
+    margin-left:28%!important;
+  }
+  .card {
+    width: 100%!important;
+  }
+  .product_col:nth-child(n+2) {
+    margin-top:5%!important;
+    margin-bottom: 0;
+  }
+  .product_col:nth-child(n) {
+    margin-left: 5px;
+  }
+}
+
 @media screen and (max-width: 767px) {
 	#contact_list {
     margin-top: 12%;
     margin-bottom: 4%;
+  }
+  .bgimage {
+    height: 300px;
+  }
+  .bgimage_aboutus {
+    height: 300px;
+  }
+  .bgimage_home {
+    height: 300px;
+  }
+  .bgimage_aboutus h1 {
+    line-height: 680%!important;
+  }
+  .bgimage_home h1 {
+    line-height: 680%!important;
+  }
+  .bgimage h1 {
+    line-height: 680%!important;
+  }
+  .about_us_p {
+    margin-top: 8%;
+  }
+  .hr_about {
+    margin-top: 8%;
+    margin-bottom: 8%;
+  }
+  .product_col:nth-child(n) {
+    margin-left: 8px;
+  }
 }
