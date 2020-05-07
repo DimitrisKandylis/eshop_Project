@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -12,6 +13,8 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/brute_def.js') }}" defer></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -38,22 +41,18 @@
         </nav>
         <nav class="navbar navbar-expand-md navbar-light shadow-sm" id="banner">
             <div class="container">
-
-
-
                 <a class="navbar-brand" href="{{ route('homepage_index') }}">
-                    <!-- <img src="{{ asset('photos/sample-logo2.png') }}" width="" height="80" id="banner_logo"></img> -->
-                    <h2 style="color:#fff;">Lorem</h2>
+                    <img src="{{ asset('photos/sample-logo3.png') }}" width="" height="90" id="banner_logo"></img>
+                    <!-- <h2 style="color:#fff;">Lorem</h2> -->
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <!-- Left Side Of Navbar -->
 
-                      <ul class="navbar-nav mr-auto" id="main_navigation" style="margin-left:35%;">
+                      <ul class="navbar-nav mr-auto" id="main_navigation" style="margin-left:30%;">
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('homepage_index') }}">{{ __('Home') }}</a>
                         </li>

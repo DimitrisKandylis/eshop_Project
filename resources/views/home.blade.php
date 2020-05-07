@@ -11,7 +11,7 @@
     </div>
   </div>
 </section>
-<div class="container" style="margin-bottom:4% !important;">
+<div class="container" style="margin-bottom:4% !important;" id="home_info">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
       <img src="{{url('/photos/hom.png')}}" width="10%" style="margin-bottom:1%;"></img>
@@ -121,7 +121,7 @@
     </div>
   </div>
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="newsletter_img">
-  
+
   </div>
 </div>
 @endsection
