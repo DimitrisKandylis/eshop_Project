@@ -65,6 +65,7 @@
                             </div>
                         </div>
                     </form>
+                    <a href="{{ url('/login/google') }}" class="btn btn-google">Google</a>
                     <hr>
                     <div style="text-align:center;">
                       <label style="margin-right:3%;">You don't have an account?</label>

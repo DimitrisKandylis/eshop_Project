@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('login/{provider}', 'SocialController@redirect');
+
 Route::get('/', [
     'uses' => 'profileController@homepage_index',
     'as' => 'homepage_index'
