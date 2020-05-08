@@ -123,9 +123,39 @@ Route::post('/spaceships_edit/store', [
 
 //--------------------------------Planets routing end-------------------------------------//
 
-Route::get('/user_profile', [
-    'uses' => 'profileController@index',
-    'as' => 'profile.index'
+Route::get('/dashboard', [
+    'uses' => 'profileController@dashboard',
+    'as' => 'profile.dashboard'
+])->middleware('auth');
+
+Route::get('/account-info', [
+    'uses' => 'profileController@info',
+    'as' => 'profile.info'
+])->middleware('auth');
+
+Route::get('/account-info/billing-info', [
+    'uses' => 'profileController@billing_info',
+    'as' => 'profile.billing_info'
+])->middleware('auth');
+
+Route::get('/account-info/shipping-info', [
+    'uses' => 'profileController@shipping_info',
+    'as' => 'profile.shipping_info'
+])->middleware('auth');
+
+Route::get('/checkout', [
+    'uses' => 'profileController@checkout',
+    'as' => 'profile.checkout'
+])->middleware('auth');
+
+Route::post('/account-info/billing-info/save', [
+    'uses' => 'profileController@billing_info_save',
+    'as' => 'profile.billing_info_save'
+])->middleware('auth');
+
+Route::post('/account-info/shipping-info/save', [
+    'uses' => 'profileController@shipping_info_save',
+    'as' => 'profile.shipping_info_save'
 ])->middleware('auth');
 
 Route::get('/shop', [

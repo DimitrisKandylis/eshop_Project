@@ -21,6 +21,18 @@ class CreateUsersTable extends Migration
             $table->string('provider');
             $table->string('provider_id');
             $table->string('password');
+            $table->string('billing_name')->nullable();;
+            $table->string('billing_address')->nullable();;
+            $table->string('billing_town')->nullable();;
+            $table->string('billing_state')->nullable();;
+            $table->string('billing_zipcode')->nullable();;
+            $table->string('billing_country')->nullable();;
+            $table->string('shipping_name')->nullable();;
+            $table->string('shipping_address')->nullable();;
+            $table->string('shipping_town')->nullable();;
+            $table->string('shipping_state')->nullable();;
+            $table->string('shipping_zipcode')->nullable();;
+            $table->string('shipping_country')->nullable();;
             $table->rememberToken();
             $table->timestamps();
         });

@@ -206,6 +206,39 @@ td>a>.cart_amounts:first-child {
   margin-left:5%;
 }
 
+.the_footer {
+  bottom: 0;
+}
+
+.account_info_headers {
+  margin-top:3%;
+}
+
+.checkout_headers {
+  margin-bottom:3%;
+}
+
+.checkout_table {
+  padding: 5px!important;
+  border:1px solid #DEE2E6;
+}
+
+.pay_col {
+  border-left:1px solid #E5E5E5;
+}
+
+#checkout_diff_info_link:hover {
+  text-decoration: none;
+}
+
+#billing_info_col1 {
+  display:none;
+}
+
+#billing_info_col2 {
+  display:none;
+}
+
 #social_login_btn {
   margin-top:3%;
   margin-bottom:4%;

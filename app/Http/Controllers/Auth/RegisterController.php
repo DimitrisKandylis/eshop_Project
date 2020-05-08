@@ -70,6 +70,18 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
             'provider' => 'lorem',
             'provider_id' => '0',
+            'billing_name' => null,
+            'billing_address' => null,
+            'billing_town' => null,
+            'billing_state' => null,
+            'billing_zipcode' => null,
+            'billing_country' => null,
+            'shipping_name' => null,
+            'shipping_address' => null,
+            'shipping_town' => null,
+            'shipping_state' => null,
+            'shipping_zipcode' => null,
+            'shipping_country' => null,
         ]);
     }
 }

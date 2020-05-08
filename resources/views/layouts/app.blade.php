@@ -12,7 +12,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="{{ asset('js/brute_def.js') }}" defer></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -81,7 +80,7 @@
                               </li>
                           @else
                               <li class="nav-item">
-                                  <a class="nav-link" href="{{ route('profile.index') }}"><img src="{{url('/photos/user.png')}}" width="27px"></img></a>
+                                  <a class="nav-link" href="{{ route('profile.dashboard') }}"><img src="{{url('/photos/user.png')}}" width="27px"></img></a>
                               </li>
                               <li class="nav-item">
                                   <a class="nav-link" href="{{ route('profile.cart') }}"><img src="{{url('/photos/cart.png')}}" width="27px"></img></a>
@@ -105,7 +104,7 @@
             @yield('content')
         </main>
 
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" id="banner">
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm the_footer" id="banner">
             <div id="footer">
               <label id="footer_label">©2020 Lorem Ipsum</label>
             </div>
