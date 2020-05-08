@@ -18,6 +18,7 @@ class CreateCart extends Migration
             $table->integer('customer_id');
             $table->string('customer_email');
             $table->integer('product_id');
+            $table->integer('amount');
             $table->timestamps();
         });
     }

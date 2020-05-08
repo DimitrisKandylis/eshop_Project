@@ -84,6 +84,9 @@
                                   <a class="nav-link" href="{{ route('profile.index') }}"><img src="{{url('/photos/user.png')}}" width="27px"></img></a>
                               </li>
                               <li class="nav-item">
+                                  <a class="nav-link" href="{{ route('profile.cart') }}"><img src="{{url('/photos/cart.png')}}" width="27px"></img></a>
+                              </li>
+                              <li class="nav-item">
                                   <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><img src="{{url('/photos/logoff.png')}}" width="27px"></img></a>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                       @csrf

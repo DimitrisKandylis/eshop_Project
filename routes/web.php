@@ -16,6 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('login/{provider}', 'SocialController@redirect');
+Route::get('login/{provider}/callback','SocialController@Callback');
 
 Route::get('/', [
     'uses' => 'profileController@homepage_index',
@@ -165,6 +166,16 @@ Route::post('/shop/{product_id}', [
 Route::get('/my_cart/remove/{product_id}', [
     'uses' => 'profileController@remove',
     'as' => 'my_cart.remove'
+])->middleware('auth');
+
+Route::get('/my_cart/more/{product_id}', [
+    'uses' => 'profileController@more',
+    'as' => 'my_cart.more'
+])->middleware('auth');
+
+Route::get('/my_cart/less/{product_id}', [
+    'uses' => 'profileController@less',
+    'as' => 'my_cart.less'
 ])->middleware('auth');
 
 Auth::routes();
