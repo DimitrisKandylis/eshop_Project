@@ -148,6 +148,11 @@ Route::get('/checkout', [
     'as' => 'profile.checkout'
 ])->middleware('auth');
 
+Route::post('/checkout/paypal', [
+    'uses' => 'PaypalController@payWithpaypal',
+    'as' => 'checkout.payWithpaypal'
+]);
+
 Route::post('/account-info/billing-info/save', [
     'uses' => 'profileController@billing_info_save',
     'as' => 'profile.billing_info_save'

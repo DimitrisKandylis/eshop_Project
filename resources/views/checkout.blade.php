@@ -38,7 +38,7 @@
           </div>
           <div style="text-align:center;margin-bottom:5%;margin-top:5%;"><h4>Total Price: {{$total_price}}$</h4></div>
           <hr>
-          <form>
+          <form method="POST" id="payment-form"  action="{{ route('checkout.payWithpaypal') }}">
             <div class="row">
               <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <h4 class="checkout_headers">Shipping Information</h4>
@@ -135,9 +135,9 @@
 
               <!-- To de3ia col gia to payment -->
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pay_col">
-                <h4 class="checkout_headers">Payment Methods</h4>
+                <h4 class="checkout_headers pay_header">Payment Methods</h4>
                 <button type="submit" class="btn btn-primary">
-                    {{ __('Confirm Payment') }}
+                    {{ __('Submit Payment') }}
                 </button>
               </div>
           </div>

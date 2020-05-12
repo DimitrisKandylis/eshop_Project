@@ -231,6 +231,10 @@ td>a>.cart_amounts:first-child {
   text-decoration: none;
 }
 
+.pay_header {
+  margin-bottom: 10%!important;
+}
+
 #billing_info_col1 {
   display:none;
 }
