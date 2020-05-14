@@ -36,8 +36,6 @@
               </tbody>
             </table>
           </div>
-          <div style="text-align:center;margin-bottom:5%;margin-top:5%;"><h4>Total Price: {{$total_price}}$</h4></div>
-          <hr>
           <form method="POST" id="payment-form"  action="{{ route('checkout.payWithpaypal') }}">
             <div class="row">
               <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
@@ -135,9 +133,48 @@
 
               <!-- To de3ia col gia to payment -->
               <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 pay_col">
-                <h4 class="checkout_headers pay_header">Payment Methods</h4>
-                <button type="submit" class="btn btn-primary">
-                    {{ __('Submit Payment') }}
+
+                <div class="card" style="text-align:left;">
+                  <div class="card-header">Billing Summary</div>
+
+                  <div class="card-body">
+                    <table class="table">
+                      <thead>
+
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Items Total:</th>
+                          <th scope="row">{{$total_price}}$</th>
+                        </tr>
+                        <tr>
+                          <th scope="row">Shipping:</th>
+                          <th scope="row"><i>Free</i></th>
+                        </tr>
+                        <tr>
+                          <th scope="row" class="total_price_row">Total for your Order:</th>
+                          <th scope="row" class="total_price_row">{{$total_price}}$</th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                <hr>
+                <h4 class="checkout_headers pay_header">Pay and Place Order</h4>
+
+                <!-- hidden inputs gia thn forma -->
+                <input style="display:none;" type="text" value="{{$total_price}}" name="amount">
+                <input style="display:none;" type="number" value="{{$products->count()}}" name="products_quantity">
+                @for($i=0;$i<$products->count();$i++)
+                  <input style="display:none;" type="text" value="{{$products->get($i)->name}}" name="product_name_{{$i}}">
+                  <input style="display:none;" type="text" value="{{$product_amounts[$i]}}" name="product_quantity_{{$i}}">
+                  <input style="display:none;" type="text" value="{{$products->get($i)->price}}" name="product_price_{{$i}}">
+                @endfor
+
+                <button type="submit" class="btn btn-primary btn-block btn-lg" id="paypal_btn">
+                    <img src="/photos/paypal.png" width="18px" style="margin-right:5px;margin-bottom:2px;"></img>
+                    {{ __('Pay with Paypal') }}
                 </button>
               </div>
           </div>

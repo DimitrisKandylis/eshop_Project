@@ -223,16 +223,45 @@ td>a>.cart_amounts:first-child {
   border:1px solid #DEE2E6;
 }
 
+.total_price_row {
+  font-size: 19px;
+}
+
 .pay_col {
   border-left:1px solid #E5E5E5;
+  text-align: center;
+}
+
+#payment-form {
+  margin-top:4%;
 }
 
 #checkout_diff_info_link:hover {
   text-decoration: none;
 }
 
-.pay_header {
+.pay_header_left {
   margin-bottom: 10%!important;
+  float: left;
+}
+
+.pay_header_right {
+  margin-bottom: 10%!important;
+  float: left;
+}
+
+#paypal_btn {
+  color:#fff!important;
+  background:#0070BA!important;
+  border-color:#0070BA!important;
+  transition-duration: 0.3s;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#paypal_btn:hover {
+  background:#0092D6!important;
+  border-color:#0092D6!important;
 }
 
 #billing_info_col1 {

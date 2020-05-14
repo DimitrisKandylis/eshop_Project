@@ -13,7 +13,9 @@ use PayPal\Rest\ApiContext;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Exception\PayPalConnectionException;
 use PayPal\Validation\UrlValidator;
-use manifest\src\values\Url;
+use Illuminate\Support\Facades\Session;
+use URL;
+use Redirect;
 use Illuminate\Http\Request;
 
 class PaypalController extends Controller
@@ -33,36 +35,41 @@ class PaypalController extends Controller
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
 
-        //Create twn items apo to checkout
-        $item_1 = new Item();
-        $item_1->setName('Item 1') /** item name **/
-                ->setCurrency('USD')
-                ->setQuantity(1)
-                ->setPrice($request->get('amount')); /** unit price **/
 
+        //Create twn items apo to checkout
+        $products_quantity = $request->products_quantity;
         //Create ths listas me ta items tou checkout
         $item_list = new ItemList();
-        $item_list->setItems(array($item_1));
+        for($i=0;$i<$products_quantity;$i++) {
+          $item = new Item();
+          $item->setName($request->get('product_name_'.$i))
+                ->setCurrency('USD')
+                ->setQuantity($request->get('product_quantity_'.$i))
+                ->setPrice($request->get('product_price_'.$i));
+          $item_list->addItem($item);
+        }
+        //dd($item_list);
 
         //Create tou telikou amount
         $amount = new Amount();
         $amount->setCurrency('USD')
-              ->setTotal($request->get('amount'));
-              
+                ->setTotal($request->get('amount'));
+        $total_amount_gia_order_creation = $request->get('amount');
+
         $transaction = new Transaction();
         $transaction->setAmount($amount)
-            ->setItemList($item_list)
-            ->setDescription('Your transaction description');
+                    ->setItemList($item_list)
+                    ->setDescription('Sample description');
         $redirect_urls = new RedirectUrls();
-        $redirect_urls->setReturnUrl(URL::route('status')) /** Specify return URL **/
-            ->setCancelUrl(URL::route('status'));
+        $redirect_urls->setReturnUrl(URL::route('shop.order_store',$total_amount_gia_order_creation))
+                      ->setCancelUrl(URL::route('profile.checkout'));
 
         $payment = new Payment();
         $payment->setIntent('Sale')
             ->setPayer($payer)
             ->setRedirectUrls($redirect_urls)
             ->setTransactions(array($transaction));
-        /** dd($payment->create($this->_api_context));exit; **/
+        //dd($payment->create($this->_api_context));exit;
         try {
           $payment->create($this->_api_context);
           } catch (\PayPal\Exception\PPConnectionException $ex) {
@@ -89,6 +96,33 @@ class PaypalController extends Controller
           \Session::put('error', 'Unknown error occurred');
                   return Redirect::route('paywithpaypal');
     }
+
+    public function order_placed() {
+      return view('order-placed');
+    }
+
+    public function getPaymentStatus()
+    {
+        /** Get the payment ID before session clear **/
+        $payment_id = Session::get('paypal_payment_id');
+        /** clear the session payment ID **/
+                Session::forget('paypal_payment_id');
+                if (empty(Input::get('PayerID')) || empty(Input::get('token'))) {
+        \Session::put('error', 'Payment failed');
+                    return Redirect::route('/');
+        }
+        $payment = Payment::get($payment_id, $this->_api_context);
+                $execution = new PaymentExecution();
+                $execution->setPayerId(Input::get('PayerID'));
+        /**Execute the payment **/
+                $result = $payment->execute($execution, $this->_api_context);
+        if ($result->getState() == 'approved') {
+        \Session::put('success', 'Payment success');
+                    return Redirect::route('/');
+        }
+        \Session::put('error', 'Payment failed');
+                return Redirect::route('/');
+        }
 
     /**
      * Display a listing of the resource.

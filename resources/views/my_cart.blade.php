@@ -37,7 +37,7 @@
           </table>
           <hr>
           <label>Total Price: {{$total_price}}$</label>
-          <a class="btn btn-md btn-primary" href="{{ route('profile.checkout') }}" style="margin-left:2%;">Checkout</a>
+          <a class="btn btn-md btn-success" href="{{ route('profile.checkout') }}" style="margin-left:2%;">Checkout</a>
         </div>
       </div>
     </div>

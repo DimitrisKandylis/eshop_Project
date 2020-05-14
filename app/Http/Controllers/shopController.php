@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use App\Order;
 use Illuminate\Http\Request;
 
 class shopController extends Controller
@@ -47,6 +48,17 @@ class shopController extends Controller
         $product = Product::where('name', $name)->first();
 
         return view('shop_product')->with('product', $product);
+    }
+
+    public function order_store($total_price)
+    {
+        $user_id = Auth::id();
+        $new_order = new Order;
+        $new_order->customer_id = $user_id;
+        $new_order->total_price = $total_price;
+        dd($new_order);
+        $new_order->save();
+        return route('profile.checkout');
     }
 
     /**

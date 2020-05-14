@@ -21,7 +21,7 @@
 
         <div class="card-body">
           @foreach ($abv as $beer_abv)
-          <h4 class="type_header">{{$beer_abv}}</h4>
+          <h4 class="type_header">Abv: {{$beer_abv}}</h4>
           <div class="row type_row" style="margin-left:-25px;">
             @foreach ($products as $product)
               @if($product->abv == $beer_abv)

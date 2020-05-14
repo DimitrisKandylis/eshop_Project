@@ -148,6 +148,11 @@ Route::get('/checkout', [
     'as' => 'profile.checkout'
 ])->middleware('auth');
 
+Route::get('/order_placed', [
+    'uses' => 'PaypalController@order_placed',
+    'as' => 'paypal.order_placed'
+])->middleware('auth');
+
 Route::post('/checkout/paypal', [
     'uses' => 'PaypalController@payWithpaypal',
     'as' => 'checkout.payWithpaypal'
@@ -167,6 +172,11 @@ Route::get('/shop', [
     'uses' => 'shopController@index',
     'as' => 'shop.index'
 ]);
+
+Route::get('/shop/order_store', [
+    'uses' => 'shopController@order_store',
+    'as' => 'shop.order_store'
+])->middleware('auth');
 
 Route::get('/shop/types', [
     'uses' => 'shopController@type_index',
