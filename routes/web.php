@@ -223,6 +223,9 @@ Route::get('/my_cart/less/{product_id}', [
     'as' => 'my_cart.less'
 ])->middleware('auth');
 
+Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
+Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

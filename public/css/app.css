@@ -2,30 +2,48 @@
   float: left !important;
 }
 #banner {
-  background-color: #703F21;
+  background-color: #885053;
   box-shadow: 0px 2px 5px black !important;
 }
 .nav-link {
   color:#fff !important;
 }
 .btn-primary {
-  background-color: #703F21 !important;
-  border-color: #703F21 !important;
+  background-color: #66b285 !important;
+  border-color: #66b285 !important;
   color: #fff !important;
 }
 .btn-primary:hover {
-  background-color: #7d4725 !important;
-  border-color: #7d4725 !important;
+  background-color: #44885f !important;
+  border-color: #44885f !important;
+}
+.btn-danger {
+  background-color: #FE5F55 !important;
+  border-color: #FE5F55 !important;
+  color: #fff !important;
+}
+.btn-danger:hover {
+  background-color: #fe4134 !important;
+  border-color: #fe4134 !important;
+}
+.btn-info {
+  background-color: #777DA7 !important;
+  border-color: #777DA7 !important;
+  color: #fff !important;
+}
+.btn-info:hover {
+  background-color: #5b608b !important;
+  border-color: #5b608b !important;
 }
 .btn-link {
-  color: #703F21 !important;
+  color: #885053 !important;
 }
 .btn-link:hover {
   color: #7d4725 !important;
 }
 .form-control:focus {
-  border-color: #703F21 !important;
-  box-shadow: 0 0 0 0.1rem #703F21 !important;
+  border-color: #885053 !important;
+  box-shadow: 0 0 0 0.1rem #885053 !important;
 }
 .card-header {
   background-color: #222 !important;
@@ -318,7 +336,7 @@ td>a>.cart_amounts:first-child {
 }
 
 .social_links:hover {
-  color: #703F21;
+  color: #885053;
   text-decoration: none;
 }
 
@@ -388,7 +406,7 @@ td>a>.cart_amounts:first-child {
 }
 
 .product_labels {
-  color: #7d4725;
+  color: #777DA7;
 }
 
 .product_page_image {
@@ -408,7 +426,7 @@ td>a>.cart_amounts:first-child {
   object-fit: cover;
   width: 550px;
   height: 300px;
-  border: 1px solid #703F21;
+  border: 1px solid #885053;
   border-radius: 7px;
   box-shadow: 2px 2px 5px black;
 }
@@ -438,7 +456,7 @@ td>a>.cart_amounts:first-child {
 .dot {
   height: 15px;
   width: 15px;
-  background-color: #703F21;
+  background-color: #885053;
   border-radius: 50%;
   display: inline-block;
 }
@@ -450,7 +468,7 @@ td>a>.cart_amounts:first-child {
 .news_dot {
   height: 15px;
   width: 15px;
-  background-color: #703F21;
+  background-color: #885053;
   border-radius: 50%;
   display: inline-block;
 }
@@ -473,7 +491,7 @@ td>a>.cart_amounts:first-child {
 }
 
 .hr_style {
-  border: 1px double #703F21;
+  border: 1px double #885053;
   margin-top:4%;
   margin-bottom: 4%;
 }
