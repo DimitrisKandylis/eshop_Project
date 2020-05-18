@@ -3,6 +3,7 @@
 @section('title',' - Dashboard')
 
 @section('account_pages')
+<!-- User's dashboard -->
 <div class="card" style="margin-bottom:15%;">
   <div class="card-header">Dashboard</div>
 

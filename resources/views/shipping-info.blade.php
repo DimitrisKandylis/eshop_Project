@@ -7,6 +7,7 @@
   <div class="card-header">Shipping Info</div>
 
   <div class="card-body">
+    <!-- Form with shipping info of the user -->
     <form method="POST" action="{{ route('profile.shipping_info_save') }}">
       @csrf
       <div class="form-group row">

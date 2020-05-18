@@ -7,6 +7,7 @@
   <div class="card-header">Billing Info</div>
 
   <div class="card-body">
+    <!-- Form with billing info of the user -->
     <form method="POST" action="{{ route('profile.billing_info_save') }}">
       @csrf
       <div class="form-group row">

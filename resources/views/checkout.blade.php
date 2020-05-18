@@ -39,6 +39,7 @@
           <form method="POST" id="payment-form"  action="{{ route('checkout.payWithpaypal') }}">
             <div class="row">
               <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+                <!-- Shipping info of the user -->
                 <h4 class="checkout_headers">Shipping Information</h4>
                 <div class="row">
                   <!-- To aristera col gia ta stoixeia tou user -->
@@ -85,6 +86,7 @@
                   </div>
                 </div>
                 <hr>
+                <!-- Billing info of the user -->
                 <h4 class="checkout_headers">Billing Information</h4>
                 <a class="btn" id="checkout_diff_info_link">Is billing info different than shipping info?</a>
                 <div class="row">

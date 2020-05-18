@@ -9,7 +9,7 @@
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="card">
         <div class="card-header">My Cart</div>
-
+        <!-- The table with the content of the user's cart -->
         <div class="card-body">
           <table class="table">
             <thead>
@@ -36,6 +36,7 @@
             </tbody>
           </table>
           <hr>
+          <!-- The cart's total price -->
           <label>Total Price: {{$total_price}}$</label>
           <a class="btn btn-md btn-info" href="{{ route('profile.checkout') }}" style="margin-left:2%;">Checkout</a>
         </div>

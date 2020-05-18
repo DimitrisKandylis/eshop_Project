@@ -96,7 +96,7 @@
 
   </div>
 </div>
-
+<!-- Newsletter form -->
 <div class="row" style="width:100%;margin-right:0!important;margin-left:0!important;margin-bottom: -24px;">
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="newsletter_div">
     <div id="newsletter_div_inner">

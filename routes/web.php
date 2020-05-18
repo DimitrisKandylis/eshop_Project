@@ -11,12 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('login/{provider}', 'SocialController@redirect');
-Route::get('login/{provider}/callback','SocialController@Callback');
+//--------------------------------Navbar routing start-------------------------------------//
 
 Route::get('/', [
     'uses' => 'profileController@homepage_index',
@@ -31,97 +26,18 @@ Route::get('/about_us', function () {
     return view('about_us');
 });
 
-Route::get('/portfolio', function () {
-    return view('portfolio');
-});
-
-Route::get('/services', function () {
-    return view('services');
-});
-
-Route::get('/homepage', function () {
-    return view('homepage');
-});
+Route::get('/shop', [
+    'uses' => 'shopController@index',
+    'as' => 'shop.index'
+]);
 
 Route::get('/php_training', function () {
     return view('php_training');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-});
+//--------------------------------Navbar routing end-------------------------------------//
 
-//--------------------------------Planets routing start-------------------------------------//
-
-Route::get('/Planets', function () {
-    return view('planets');
-});
-
-Route::get('/planets', [
-    'uses' => 'PlanetController@index',
-    'as' => 'planets.index'
-]);
-
-Route::get('/planet_create', [
-    'uses' => 'PlanetController@create',
-    'as' => 'planets.create'
-]);
-
-Route::post('/planet_create/store', [
-    'uses' => 'PlanetController@store',
-    'as' => 'planets.store'
-]);
-
-Route::get('/planet_create/destroy/{id}', [
-    'uses' => 'PlanetController@destroy',
-    'as' => 'planets.destroy'
-]);
-
-Route::get('/planet_create/edit/{id}', [
-    'uses' => 'PlanetController@edit',
-    'as' => 'planets.edit'
-]);
-
-Route::post('/planet_edit/store', [
-    'uses' => 'PlanetController@store_edit',
-    'as' => 'planets.store_edit'
-]);
-
-//--------------------------------Planets routing end-------------------------------------//
-
-//--------------------------------Spaceships routing start-------------------------------------//
-
-Route::get('/spaceships', [
-    'uses' => 'SpaceshipController@index',
-    'as' => 'spaceships.index'
-]);
-
-Route::get('/spaceships_create', [
-    'uses' => 'SpaceshipController@create',
-    'as' => 'spaceships.create'
-]);
-
-Route::post('/spaceships_create/store', [
-    'uses' => 'SpaceshipController@store',
-    'as' => 'spaceships.store'
-]);
-
-Route::get('/spaceships_create/destroy/{id}', [
-    'uses' => 'SpaceshipController@destroy',
-    'as' => 'spaceships.destroy'
-]);
-
-Route::get('/spaceships_create/edit/{id}', [
-    'uses' => 'SpaceshipController@edit',
-    'as' => 'spaceships.edit'
-]);
-
-Route::post('/spaceships_edit/store', [
-    'uses' => 'SpaceshipController@store_edit',
-    'as' => 'spaceships.store_edit'
-]);
-
-//--------------------------------Planets routing end-------------------------------------//
+//--------------------------------User Profile routing start-------------------------------------//
 
 Route::get('/dashboard', [
     'uses' => 'profileController@dashboard',
@@ -143,21 +59,6 @@ Route::get('/account-info/shipping-info', [
     'as' => 'profile.shipping_info'
 ])->middleware('auth');
 
-Route::get('/checkout', [
-    'uses' => 'profileController@checkout',
-    'as' => 'profile.checkout'
-])->middleware('auth');
-
-Route::get('/order_placed', [
-    'uses' => 'PaypalController@order_placed',
-    'as' => 'paypal.order_placed'
-])->middleware('auth');
-
-Route::post('/checkout/paypal', [
-    'uses' => 'PaypalController@payWithpaypal',
-    'as' => 'checkout.payWithpaypal'
-]);
-
 Route::post('/account-info/billing-info/save', [
     'uses' => 'profileController@billing_info_save',
     'as' => 'profile.billing_info_save'
@@ -168,15 +69,9 @@ Route::post('/account-info/shipping-info/save', [
     'as' => 'profile.shipping_info_save'
 ])->middleware('auth');
 
-Route::get('/shop', [
-    'uses' => 'shopController@index',
-    'as' => 'shop.index'
-]);
+//--------------------------------User Profile routing end-------------------------------------//
 
-Route::get('/shop/order_store', [
-    'uses' => 'shopController@order_store',
-    'as' => 'shop.order_store'
-])->middleware('auth');
+//--------------------------------Shop routing start-------------------------------------//
 
 Route::get('/shop/types', [
     'uses' => 'shopController@type_index',
@@ -197,6 +92,10 @@ Route::get('/shop/{name}', [
     'uses' => 'shopController@page',
     'as' => 'shop.page'
 ]);
+
+//--------------------------------Shop routing end-------------------------------------//
+
+//--------------------------------Cart routing start-------------------------------------//
 
 Route::get('/my_cart', [
     'uses' => 'profileController@cart',
@@ -223,7 +122,38 @@ Route::get('/my_cart/less/{product_id}', [
     'as' => 'my_cart.less'
 ])->middleware('auth');
 
+//--------------------------------Cart routing end-------------------------------------//
+
+//--------------------------------Order and Checkout routing start-------------------------------------//
+
+Route::get('/checkout', [
+    'uses' => 'profileController@checkout',
+    'as' => 'profile.checkout'
+])->middleware('auth');
+
+Route::get('/order_placed', [
+    'uses' => 'PaypalController@order_placed',
+    'as' => 'paypal.order_placed'
+])->middleware('auth');
+
+Route::post('/checkout/paypal', [
+    'uses' => 'PaypalController@payWithpaypal',
+    'as' => 'checkout.payWithpaypal'
+]);
+
+Route::get('/shop/order_store', [
+    'uses' => 'shopController@order_store',
+    'as' => 'shop.order_store'
+])->middleware('auth');
+
+//--------------------------------Order and Checkout routing end-------------------------------------//
+
+Route::get('login/{provider}', 'SocialController@redirect');
+
+Route::get('login/{provider}/callback','SocialController@Callback');
+
 Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
+
 Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
 Auth::routes();
