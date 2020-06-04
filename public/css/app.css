@@ -1,3 +1,17 @@
+.spinner-wrapper {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #fff;
+z-index: 999999;
+}
+.spinner {
+  position: absolute;
+top: 48%;
+left: 48%;
+}
 #banner_logo {
   float: left !important;
 }
@@ -5,8 +19,108 @@
   background-color: #885053;
   box-shadow: 0px 2px 5px black !important;
 }
+#footer {
+  background-color: #0d0d0d;
+}
+#footer_links {
+  background-color: #222;
+  color: #fff;
+  padding-left: 0!important;
+  padding-right: 0!important;
+  margin-left: 0!important;
+  margin-right: 0!important;
+  max-width: 100%;
+}
+.nav2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 2%;
+}
+.second_navbar {
+  background-color: #222!important;
+  padding: 0!important;
+}
+.dropdown-menu {
+  background-color: #222!important;
+}
+.dropdown-item {
+  color:#fff!important;
+  transition-duration: 0.2s;
+}
+.dropdown-item:hover {
+  background-color: #885053!important;
+}
+.nav2bar>li {
+  padding: 5px;
+  transition-duration: 0.2s;
+  border-top: solid 1px #222;
+  border-bottom: solid 1px #222;
+}
+.nav2bar>li:hover {
+  background-color: #885053!important;
+}
+.footer_menu {
+  list-style-type: none;
+  margin-top:35px;
+}
+.footer_menu>li {
+
+  margin-bottom: 10px;
+  width: 80%;
+}
+.footer_menu_lists>li::before {
+  color: #885053;
+  content: "\2022";
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em;
+}
+.footer_menu>li>a {
+  text-decoration: none;
+  color: #fff;
+  transition-duration: 0.3s;
+}
+.footer_menu>li>a:hover {
+  text-decoration: none;
+  color: #885053;
+}
+.footer_fa {
+  color: #fff!important;
+  font-size: 18px!important;
+  margin-right: 15px;
+}
+.footer_fa:hover {
+  color: #885053!important;
+}
+.footer_menu_hr {
+  border: solid 1px #885053;
+  float: left;
+  width: 50px;
+  margin-top:-2px;
+}
+.footer_menu_divs {
+  padding: 40px;
+}
+.footer_menu_divs>h5 {
+  margin-left: 35px;
+}
+.footer_menu_divs>hr {
+  margin-left: 35px;
+}
 .nav-link {
   color:#fff !important;
+}
+.container_simple {
+  margin-top: 45px;
+  margin-bottom: 25px;
+}
+.simple_header {
+  margin-bottom: 20px;
+}
+.privacy>h6 {
+  margin-top: 25px;
+  margin-bottom: 15px;
 }
 .btn-primary {
   background-color: #66b285 !important;
@@ -178,7 +292,7 @@
 }
 
 .fa {
-  font-size: 52px !important;
+  font-size: 52px;
   color: #222;
   transition-duration: 0.5s;
 }
@@ -193,7 +307,7 @@
 }
 
 .fa-map-marker {
-  font-size: 62px !important;
+  font-size: 62px;
 }
 
 #footer {
@@ -517,14 +631,47 @@ td>a>.cart_amounts:first-child {
   margin-top:5%;
   margin-left: 30%;
 }
-
+#submit_button_form {
+  background: #222!important;
+  border-color: #222!important;
+  transition-duration: 0.2s;
+}
+.news_hr {
+  border: solid 1px #222;
+  width: 20%;
+  float:left;
+}
+#contact_form {
+  margin-top: 10px;
+}
+#submit_button_form:hover {
+  background:#404040!important;
+  border-color: #404040!important;
+}
+.prod_hr {
+  border: solid 1px #885053;
+  width: 8%;
+  margin-bottom: 3%;
+  margin-top: -1px;
+}
 #newsletter_div {
-  background-color: #222;
+  background-color: #885053;
   color: #fff;
   padding-right: 0!important;
   padding-left: 0!important;
+  padding-top: 12px;
+  padding-bottom: 15px;
 }
-
+.home_imgs {
+  text-align: center;
+}
+.home_imgs>a>img {
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px black;
+}
+.home_imgs_cont {
+  margin-bottom: 5%;
+}
 #newsletter_img {
   height: auto;
   width: 100%;
@@ -714,4 +861,13 @@ td>a>.cart_amounts:first-child {
     margin-top: 0px;
     font-size: 2.2rem!important;
   }
+}
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+#myCarousel {
+  margin-bottom: 2%;
 }

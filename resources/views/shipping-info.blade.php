@@ -3,7 +3,7 @@
 @section('title',' - Shipping Info')
 
 @section('account_pages')
-<div class="card" style="margin-bottom:15%;">
+<div class="card">
   <div class="card-header">Shipping Info</div>
 
   <div class="card-body">

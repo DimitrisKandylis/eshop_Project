@@ -21,7 +21,7 @@
 
         <div class="card-body">
           @foreach ($types as $type)
-          <h4 class="type_header">{{$type}}</h4>
+          <h4 class="type_header" id="{{$type}}">{{$type}}</h4>
           <div class="row type_row" style="margin-left:-25px;">
             @foreach ($products as $product)
               @if($product->type == $type)

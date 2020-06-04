@@ -3,7 +3,7 @@
 @section('title',' - Shop - My Cart')
 
 @section('content')
-<div class="container" style="margin-bottom:2% !important;">
+<div class="container" style="margin-bottom:8% !important;">
   <div class="row" style="margin-top:3%;">
     <!-- O pinakas twn proiontwn -->
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

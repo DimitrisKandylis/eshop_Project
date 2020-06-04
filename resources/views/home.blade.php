@@ -1,16 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="bgimage_home">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h1>Lorem ipsum dolor sit amet</h1>
-        <h4>Company Slogan</h4>
-      </div>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="/photos/slide1.jpg" alt="Los Angeles" width="1100" height="500">
+    </div>
+    <div class="carousel-item">
+      <img src="/photos/slide2.jpg" alt="Chicago" width="1100" height="500">
     </div>
   </div>
-</section>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+
 <div class="container" style="margin-bottom:4% !important;" id="home_info">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
@@ -24,26 +42,21 @@
     </div>
   </div>
 </div>
-<div class="container" style="margin-bottom:4% !important;max-width: 100% !important;" id="serv_dark">
-  <div class="row">
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding-top:8%;padding-bottom:11%;text-align:center;">
-      <img src="{{url('/photos/beer.png')}}" width="20%" style="margin-bottom:2%;"></img>
-      <h4 style="margin-bottom:2%;">Our Products</h4>
-      <br>
-      <p>
-        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-      </p>
-      <br>
-      <a class="btn btn-md btn-info" href="{{ route('shop.index') }}" style="margin-top:2%;">Visit our Shop</a>
-    </div>
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="home_col_beer">
 
+<div class="container home_imgs_cont">
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 home_imgs">
+      <a href=""><img src="/photos/home1.jpg" width="450"></img></a>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 home_imgs">
+      <a href=""><img src="/photos/home2.jpg" width="450"></img></a>
     </div>
   </div>
 </div>
 
 <div class="container" style="margin-bottom:4% !important;text-align:center;">
-  <h4 style="margin-bottom:3%;">Latest Products</h4>
+  <h4>Latest Products</h4>
+  <hr class="prod_hr">
   <div class="row" style="padding-left: 40px;">
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" class="latest_div">
       <!-- prwto proion -->
@@ -95,12 +108,66 @@
     </div>
 
   </div>
+
+  <div class="row" style="padding-left: 40px; margin-top:3%;">
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" class="latest_div">
+      <!-- 4o proion -->
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{$products->get(3)->img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{$products->get(3)->name}}</h5>
+          <p class="card-text">{{$products->get(3)->info}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Type: {{$products->get(3)->type}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="{{route('shop.page', ['name' => $products->get(3)->name])}}" class="btn btn-primary btn-block">Check it</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" class="latest_div">
+      <!-- 5o proion -->
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{$products->get(4)->img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{$products->get(4)->name}}</h5>
+          <p class="card-text">{{$products->get(4)->info}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Type: {{$products->get(4)->type}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="{{route('shop.page', ['name' => $products->get(4)->name])}}" class="btn btn-primary btn-block">Check it</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" class="latest_div">
+      <!-- 6o proion -->
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{$products->get(5)->img}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{$products->get(5)->name}}</h5>
+          <p class="card-text">{{$products->get(5)->info}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Type: {{$products->get(5)->type}}</li>
+        </ul>
+        <div class="card-body">
+          <a href="{{route('shop.page', ['name' => $products->get(5)->name])}}" class="btn btn-primary btn-block">Check it</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
 </div>
 <!-- Newsletter form -->
 <div class="row" style="width:100%;margin-right:0!important;margin-left:0!important;margin-bottom: -24px;">
   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" id="newsletter_div">
     <div id="newsletter_div_inner">
       <h4>Fill the form below to subscribe to our Newsletter.</h4>
+      <hr class="news_hr">
       <br>
       <form id="contact_form">
         <div class="form-group">
@@ -114,7 +181,7 @@
         <div class="form-group">
           <label for="exampleInputEmail1">Email address</label>
           <input type="email" class="form-control" id="newsletter_email_input" aria-describedby="emailHelp">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <small id="emailHelp" class="form-text text-muted" style="color:#fff!important;">We'll never share your email with anyone else.</small>
         </div>
         <button type="submit" class="btn btn-primary" id="submit_button_form">Submit</button>
       </form>

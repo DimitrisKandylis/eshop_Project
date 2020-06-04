@@ -22,6 +22,18 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/payment-methods', function () {
+    return view('payment_methods');
+});
+
+Route::get('/shipping-methods', function () {
+    return view('shipping_methods');
+});
+
+Route::get('/privacy-policy', function () {
+    return view('privacy_policy');
+});
+
 Route::get('/about_us', function () {
     return view('about_us');
 });

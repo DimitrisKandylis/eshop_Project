@@ -3,7 +3,7 @@
 @section('title',' - Account Info')
 
 @section('account_pages')
-<div class="card" style="margin-bottom:2%;">
+<div class="card">
   <div class="card-header">Account Info</div>
 
   <div class="card-body">

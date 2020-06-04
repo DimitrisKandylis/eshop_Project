@@ -20,6 +20,11 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -31,6 +36,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+  <!--CSS Spinner-->
+<div class="spinner-wrapper">
+<div class="spinner"><img src="/photos/pre.gif"></img></div>
+</div>
     <div id="app">
       <nav class="" id="topbar">
           <div class="container">
@@ -54,17 +63,6 @@
 
                     <!-- Left Side Of Navbar -->
 
-                      <ul class="navbar-nav mr-auto" id="main_navigation" style="margin-left:30%;">
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('homepage_index') }}">{{ __('Home') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about_us">{{ __('About') }}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact">{{ __('Contact') }}</a>
-                        </li>
-                      </ul>
 
 
                     <!-- Right Side Of Navbar -->
@@ -100,16 +98,102 @@
           </div>
         </nav>
 
+        <!-- 2o navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light second_navbar">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler nav2" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="container">
+            <div class="collapse navbar-collapse" id="navbarNav2">
+              <ul class="navbar-nav nav2bar">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{ route('homepage_index') }}">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Beers
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ route('shop.type_index') }}#Lager">Lager</a>
+                    <a class="dropdown-item" href="{{ route('shop.type_index') }}#Bock">Bock</a>
+                    <a class="dropdown-item" href="{{ route('shop.type_index') }}#Stout">Stout</a>
+                    <a class="dropdown-item" href="{{ route('shop.type_index') }}#Viess">Viess</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about_us">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
         <main class="py-4" style="padding-top: 0rem!important;">
             @yield('content')
         </main>
 
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm the_footer" id="banner">
-            <div id="footer">
-              <label id="footer_label">©2020 Lorem Ipsum</label>
-            </div>
-        </nav>
 
+        <div id="footer_links" class="container">
+          <div class="row" style="margin-left:0;margin-right:0;">
+          <div class="col-md-3 footer_menu_divs">
+            <h5>Contact Info</h5>
+            <hr class="footer_menu_hr">
+            <ul class="footer_menu">
+              <li><a href="javascript:void(0)"><i class="fa fa-map-marker footer_fa" aria-hidden="true"></i>Celeste Slater 606, Ullamcorper</a></li>
+              <li><a href="tel:+66 859038213"><i class="fa fa-phone footer_fa" aria-hidden="true"></i>+66 859038213</a></li>
+              <li><a href="mailto:info@lorem.com"><i class="fa fa-envelope footer_fa" aria-hidden="true"></i>info@lorem.com</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer_menu_divs">
+            <h5>Our Company</h5>
+            <hr class="footer_menu_hr">
+            <ul class="footer_menu footer_menu_lists">
+              <li><a href="/about_us">About Us</a></li>
+              <li><a href="{{ route('shop.index') }}">Shop</a></li>
+              <li><a href="/contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer_menu_divs">
+            <h5>Usefull Links</h5>
+            <hr class="footer_menu_hr">
+            <ul class="footer_menu footer_menu_lists">
+              <li><a href="/payment-methods">Payment Methods</a></li>
+              <li><a href="/shipping-methods">Shipping Methods</a></li>
+              <li><a href="/privacy-policy">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 footer_menu_divs">
+            <h5>Your Account</h5>
+            <hr class="footer_menu_hr">
+            <ul class="footer_menu footer_menu_lists">
+              <li><a href="{{ route('profile.dashboard') }}">My Dashboard</a></li>
+              <li><a href="{{ route('profile.info') }}">Profile Info</a></li>
+              <li><a href="{{ route('profile.cart') }}">My Cart</a></li>
+            </ul>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm the_footer" id="footer">
+          <div id="footer">
+            <label id="footer_label">©2020 Lorem Ipsum</label>
+          </div>
+        </nav>
+      </div>
     </div>
+
+    <script>
+    $(document).ready(function() {
+    //Preloader
+    preloaderFadeOutTime = 500;
+    function hidePreloader() {
+    var preloader = $('.spinner-wrapper');
+    preloader.fadeOut(preloaderFadeOutTime);
+    }
+    hidePreloader();
+    });
+    </script>
 </body>
 </html>
