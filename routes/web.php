@@ -13,6 +13,10 @@
 
 //--------------------------------Navbar routing start-------------------------------------//
 
+Route::get('/live_search', 'LiveSearch@index');
+Route::get('/live_search/action', 'LiveSearch@action')->name('live_search.action');
+
+
 Route::get('/', [
     'uses' => 'profileController@homepage_index',
     'as' => 'homepage_index'

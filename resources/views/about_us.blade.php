@@ -3,17 +3,7 @@
 @section('title',' - About us')
 
 @section('content')
-<!-- To hero ths selidas me ton titlo -->
-<section class="bgimage_aboutus">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h1>About us</h1>
-      </div>
-    </div>
-  </div>
-</section>
-<div class="container" style="margin-bottom:4% !important;">
+<div class="container container_simple">
   <!-- 1o row tou container -->
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">

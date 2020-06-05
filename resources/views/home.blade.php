@@ -43,6 +43,27 @@
   </div>
 </div>
 
+<div class="container">
+  <div class="row">
+    <div class="col-3 beer_icon_links">
+      <img src="/photos/lager.jpg" width="150"></img>
+      <h6>Lager</h6>
+    </div>
+    <div class="col-3 beer_icon_links">
+      <img src="/photos/bok.jpg" width="150"></img>
+      <h6>Bock</h6>
+    </div>
+    <div class="col-3 beer_icon_links">
+      <img src="/photos/stout.jpg" width="150"></img>
+      <h6>Stout</h6>
+    </div>
+    <div class="col-3 beer_icon_links">
+      <img src="/photos/weiss.jpg" width="150"></img>
+      <h6>Weiss</h6>
+    </div>
+  </div>
+</div>
+
 <div class="container home_imgs_cont">
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 home_imgs">
