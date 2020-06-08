@@ -63,9 +63,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <!-- Left Side Of Navbar -->
-                    <input type="text" name="search" onfocus="this.value=''" id="search" class="form-control" placeholder="Search" />
-                    <div class="table-responsive">
-                     <table class="table table-striped table-bordered dropdown-menu" aria-labelledby="search" style="display:none;" id="search_table">
+                    <input type="text" name="search" onfocus="this.value=''"data-toggle="dropdown" autocomplete="off" id="search" class="form-control dropdown-toggle" placeholder="Search" />
+
+                     <table class="table table-striped table-bordered dropdown-menu show" aria-labelledby="search" style="display:none;" id="search_table">
                       <thead>
                        <tr style="display:none;">
                         <th class="dropdown-item">Image</th>
@@ -79,8 +79,8 @@
 
                       </tbody>
                      </table>
-                     <button class="btn button btn-primary" style="display:none;" id="close_search">Close</button>
-                    </div>
+                     <button class="btn button btn-danger" style="display:none;" id="close_search">x</button>
+
 
                     <!-- Right Side Of Navbar -->
 
@@ -129,13 +129,21 @@
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Beers
+                    Products
                   </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ route('shop.type_index') }}#Lager">Lager</a>
-                    <a class="dropdown-item" href="{{ route('shop.type_index') }}#Bock">Bock</a>
-                    <a class="dropdown-item" href="{{ route('shop.type_index') }}#Stout">Stout</a>
-                    <a class="dropdown-item" href="{{ route('shop.type_index') }}#Viess">Viess</a>
+                  <div class="dropdown-menu dropright" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item dropdown-toggle" id="beersmenulink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{{ route('shop.beers_index') }}">Beers</a>
+                    <div class="dropdown-menu" aria-labelledby="beersmenulink">
+                      <a class="dropdown-item" href="{{ route('shop.type_index') }}#Lager">Lager</a>
+                      <a class="dropdown-item" href="{{ route('shop.type_index') }}#Bock">Bock</a>
+                      <a class="dropdown-item" href="{{ route('shop.type_index') }}#Stout">Stout</a>
+                      <a class="dropdown-item" href="{{ route('shop.type_index') }}#Viess">Viess</a>
+                    </div>
+                    <a class="dropdown-item" href="{{ route('shop.ciders_index') }}">Ciders</a>
+                    <a class="dropdown-item" href="{{ route('shop.non_alcoholic_index') }}">Non Alcoholic</a>
+                    <a class="dropdown-item" href="{{ route('shop.accessories_index') }}">Accessories</a>
+                    <a class="dropdown-item" href="{{ route('shop.home_kit_index') }}">Home Kit</a>
+                    <a class="dropdown-item" href="{{ route('shop.barley_index') }}">Barley</a>
                   </div>
                 </li>
                 <li class="nav-item">

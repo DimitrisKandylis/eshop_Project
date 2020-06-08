@@ -104,6 +104,36 @@ Route::get('/shop/abv', [
     'as' => 'shop.abv_index'
 ]);
 
+Route::get('/shop/ciders', [
+    'uses' => 'shopController@ciders_index',
+    'as' => 'shop.ciders_index'
+]);
+
+Route::get('/shop/non_alcoholic', [
+    'uses' => 'shopController@non_alcoholic_index',
+    'as' => 'shop.non_alcoholic_index'
+]);
+
+Route::get('/shop/accessories', [
+    'uses' => 'shopController@accessories_index',
+    'as' => 'shop.accessories_index'
+]);
+
+Route::get('/shop/home-kit', [
+    'uses' => 'shopController@home_kit_index',
+    'as' => 'shop.home_kit_index'
+]);
+
+Route::get('/shop/barley', [
+    'uses' => 'shopController@barley_index',
+    'as' => 'shop.barley_index'
+]);
+
+Route::get('/shop/beers', [
+    'uses' => 'shopController@beers_index',
+    'as' => 'shop.beers_index'
+]);
+
 Route::get('/shop/{name}', [
     'uses' => 'shopController@page',
     'as' => 'shop.page'

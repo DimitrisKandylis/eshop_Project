@@ -46,7 +46,7 @@ class LiveSearch extends Controller
        foreach($data as $row)
        {
         $output .= '
-        <tr>
+        <tr class="dropdown-item">
          <td class="search_td"><img src="'.$row->img.'" width="50"></img></td>
          <td class="search_td">'.$row->name.'</td>
          <td class="search_td">'.$row->type.'</td>

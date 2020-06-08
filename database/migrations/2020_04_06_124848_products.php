@@ -23,6 +23,7 @@ class Products extends Migration
           $table->string('brewery');
           $table->string('abv');
           $table->string('img');
+          $table->integer('category_id');
           $table->timestamps();
       });
     }

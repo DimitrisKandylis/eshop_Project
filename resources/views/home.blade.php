@@ -28,38 +28,43 @@
   </a>
 </div>
 
-
-<div class="container" style="margin-bottom:4% !important;" id="home_info">
+<div class="container categories_icons_home">
   <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
-      <img src="{{url('/photos/hom.png')}}" width="10%" style="margin-bottom:1%;"></img>
-      <h4 style="margin-bottom:2%;">About us</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dui enim, tempor quis lacinia sit amet, tincidunt at est. Proin condimentum leo eget enim vehicula, et faucibus leo tincidunt. In bibendum urna non augue placerat, quis dictum purus condimentum. Nunc dignissim risus et sapien fringilla, non imperdiet nibh dictum. Phasellus tempus sapien sit amet sem pretium congue at in urna. Morbi porta viverra ligula sit amet pellentesque. Donec faucibus interdum volutpat. Sed bibendum porta mi in dictum. Cras sed lacus in ante semper semper. Quisque condimentum vehicula tempus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Proin faucibus consectetur tristique.
-
-      Donec non turpis quis magna dignissim volutpat. Aenean at justo vitae erat fringilla efficitur eget ut lacus. Proin nec dolor at justo condimentum dignissim quis eget nisl. Vestibulum sapien risus, iaculis in purus non, euismod sodales erat. Nunc interdum, leo ac bibendum eleifend, ipsum neque aliquet felis, vel ultrices odio lorem eget mi. Mauris tempus ut dui et eleifend. Praesent sed neque in nulla cursus dapibus. Phasellus ut nulla quis massa suscipit efficitur vitae a nunc. Suspendisse potenti. Nunc eget elit nisi. Donec placerat nisl non lectus dignissim finibus. Mauris rhoncus luctus risus at interdum. Suspendisse bibendum ipsum purus, eu pulvinar neque rhoncus at. Aliquam mattis eget eros id ornare. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae.
-      <br>
-      <a class="btn btn-md btn-primary" href="/about_us" style="margin-top:3%;">Learn more</a>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-sx-4 beer_icon_links">
+      <a href="{{ route('shop.beers_index') }}">
+        <img src="/photos/pub.png" width="70"></img>
+        <h6 class="beer_icons_links_headers">Beers</h6>
+      </a>
     </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-3 beer_icon_links">
-      <img src="/photos/lager.jpg" width="150"></img>
-      <h6>Lager</h6>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-sx-4 beer_icon_links">
+      <a href="{{ route('shop.ciders_index') }}">
+        <img src="/photos/cider.png" width="70"></img>
+        <h6 class="beer_icons_links_headers">Ciders</h6>
+      </a>
     </div>
-    <div class="col-3 beer_icon_links">
-      <img src="/photos/bok.jpg" width="150"></img>
-      <h6>Bock</h6>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-sx-4 beer_icon_links">
+      <a href="{{ route('shop.non_alcoholic_index') }}">
+        <img src="/photos/beer-can.png" width="70"></img>
+        <h6 class="beer_icons_links_headers">Non Alcoholic</h6>
+      </a>
     </div>
-    <div class="col-3 beer_icon_links">
-      <img src="/photos/stout.jpg" width="150"></img>
-      <h6>Stout</h6>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-sx-4 beer_icon_links">
+      <a href="{{ route('shop.accessories_index') }}">
+        <img src="/photos/bottle-opener.png" width="70"></img>
+        <h6 class="beer_icons_links_headers">Accessories</h6>
+      </a>
     </div>
-    <div class="col-3 beer_icon_links">
-      <img src="/photos/weiss.jpg" width="150"></img>
-      <h6>Weiss</h6>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-sx-4 beer_icon_links">
+      <a href="{{ route('shop.home_kit_index') }}">
+        <img src="/photos/brewery.png" width="70"></img>
+        <h6 class="beer_icons_links_headers">Home Kit</h6>
+      </a>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-4 col-sx-4 beer_icon_links">
+      <a href="{{ route('shop.barley_index') }}">
+        <img src="/photos/wheat.png" width="70"></img>
+        <h6 class="beer_icons_links_headers">Barley</h6>
+      </a>
     </div>
   </div>
 </div>

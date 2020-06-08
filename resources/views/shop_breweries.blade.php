@@ -8,10 +8,36 @@
     <!-- To plaino menu -->
     <div class="col-md-2">
       <ul class="list-group list-group-flush" id="shop_side_menu">
-        <li class="list-group-item"><a href="{{ route('shop.index') }}" class="shop_links">All Products</a></li>
-        <li class="list-group-item"><a href="{{ route('shop.type_index') }}" class="shop_links">Types</a></li>
-        <li class="list-group-item"><a href="{{ route('shop.brewery_index') }}" class="shop_links">Breweries</a></li>
-        <li class="list-group-item"><a href="{{ route('shop.abv_index') }}" class="shop_links">ABV</a></li>
+        <li class="list-group-item list-group-item-action"><a href="{{ route('shop.index') }}" class="shop_links">All Products</a></li>
+        @foreach($categories as $category)
+        <li class="list-group-item list-group-item-action">
+          <div class="btn-group">
+            @if($category->name == "Beers")
+              <a href="{{ route('shop.beers_index') }}" class="shop_links">{{$category->name}}</a>
+            @elseif($category->name == "Ciders")
+              <a href="{{ route('shop.ciders_index') }}" class="shop_links">{{$category->name}}</a>
+            @elseif($category->name == "Non Alcoholic")
+              <a href="{{ route('shop.non_alcoholic_index') }}" class="shop_links">{{$category->name}}</a>
+            @elseif($category->name == "Accessories")
+              <a href="{{ route('shop.accessories_index') }}" class="shop_links">{{$category->name}}</a>
+            @elseif($category->name == "Home Kit")
+              <a href="{{ route('shop.home_kit_index') }}" class="shop_links">{{$category->name}}</a>
+            @elseif($category->name == "Barley")
+              <a href="{{ route('shop.barley_index') }}" class="shop_links">{{$category->name}}</a>
+            @endif
+            @if($category->name == "Beers")
+            <a type="button" class="dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <span class="sr-only">Toggle Dropdown</span>
+            </a>
+            <div class="dropdown-menu">
+              <a href="{{ route('shop.type_index') }}" class="dropdown-item shop_links">Types</a>
+              <a href="{{ route('shop.brewery_index') }}" class="dropdown-item shop_links">Breweries</a>
+              <a href="{{ route('shop.abv_index') }}" class="dropdown-item shop_links">ABV</a>
+            </div>
+            @endif
+          </div>
+        </li>
+        @endforeach
       </ul>
     </div>
     <!-- To card pou dhmiourgeitai gia ka8e product symfwna me to brewery tous -->
