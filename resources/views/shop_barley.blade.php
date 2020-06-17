@@ -6,7 +6,7 @@
 <div class="container" style="margin-top:4% !important;margin-bottom:4% !important;">
   <div class="row justify-content-center">
     <!-- To plaino menu -->
-    <div class="col-md-2">
+    <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
       <ul class="list-group list-group-flush" id="shop_side_menu">
         <li class="list-group-item list-group-item-action"><a href="{{ route('shop.index') }}" class="shop_links">All Products</a></li>
         @foreach($categories as $category)
@@ -41,7 +41,7 @@
       </ul>
     </div>
     <!-- To card pou dhmiourgeitai gia ka8e product -->
-    <div class="col-md-10">
+    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12 shop_card">
       <div class="card" style="margin-bottom:1%;">
         <div class="card-header">Barley</div>
 

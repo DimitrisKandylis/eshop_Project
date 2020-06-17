@@ -3,7 +3,7 @@
 @section('title',' - Billing Info')
 
 @section('account_pages')
-<div class="card">
+<div class="card dashboard_card">
   <div class="card-header">Billing Info</div>
 
   <div class="card-body">

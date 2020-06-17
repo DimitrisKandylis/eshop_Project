@@ -63,45 +63,29 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <!-- Left Side Of Navbar -->
-                    <input type="text" name="search" onfocus="this.value=''"data-toggle="dropdown" autocomplete="off" id="search" class="form-control dropdown-toggle" placeholder="Search" />
 
-                     <table class="table table-striped table-bordered dropdown-menu show" aria-labelledby="search" style="display:none;" id="search_table">
-                      <thead>
-                       <tr style="display:none;">
-                        <th class="dropdown-item">Image</th>
-                        <th class="dropdown-item">Name</th>
-                        <th class="dropdown-item">Type</th>
-                        <th class="dropdown-item">Brewery</th>
-                        <th class="dropdown-item">Abv%</th>
-                       </tr>
-                      </thead>
-                      <tbody>
-
-                      </tbody>
-                     </table>
-                     <button class="btn button btn-danger" style="display:none;" id="close_search">x</button>
 
 
                     <!-- Right Side Of Navbar -->
 
                       <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('shop.index') }}"><img src="{{url('/photos/bag.png')}}" width="25px"></img></a>
+                            <a class="nav-link" href="{{ route('shop.index') }}"><img class="menu_icon_img" src="{{url('/photos/bag.png')}}" width="25px"></img><label class="menu_icon_labels">Shop</label></a>
                         </li>
                           <!-- Authentication Links -->
                           @guest
                               <li class="nav-item">
-                                  <a class="nav-link" href="{{ route('login') }}"><img src="{{url('/photos/user.png')}}" width="27px"></img></a>
+                                  <a class="nav-link" href="{{ route('login') }}"><img class="menu_icon_img" src="{{url('/photos/user.png')}}" width="27px"></img><label class="menu_icon_labels">User Account</label></a>
                               </li>
                           @else
                               <li class="nav-item">
-                                  <a class="nav-link" href="{{ route('profile.dashboard') }}"><img src="{{url('/photos/user.png')}}" width="27px"></img></a>
+                                  <a class="nav-link" href="{{ route('profile.dashboard') }}"><img class="menu_icon_img" src="{{url('/photos/user.png')}}" width="27px"></img><label class="menu_icon_labels">Dashboard</label></a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="{{ route('profile.cart') }}"><img src="{{url('/photos/cart.png')}}" width="27px"></img></a>
+                                  <a class="nav-link" href="{{ route('profile.cart') }}"><img class="menu_icon_img" src="{{url('/photos/cart.png')}}" width="27px"></img><label class="menu_icon_labels">My Cart</label></a>
                               </li>
                               <li class="nav-item">
-                                  <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><img src="{{url('/photos/logoff.png')}}" width="27px"></img></a>
+                                  <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><img class="menu_icon_img" src="{{url('/photos/logoff.png')}}" width="27px"></img><label class="menu_icon_labels">Logout</label></a>
                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                       @csrf
                                   </form>
@@ -152,7 +136,26 @@
                 <li class="nav-item">
                   <a class="nav-link" href="/contact">Contact</a>
                 </li>
+
               </ul>
+              <input type="text" name="search" onfocus="this.value=''"data-toggle="dropdown" autocomplete="off" id="search" class="form-control dropdown-toggle" placeholder="Search" />
+
+               <table class="table table-striped table-bordered dropdown-menu show" aria-labelledby="search" style="display:none;" id="search_table">
+                <thead>
+                 <tr style="display:none;">
+                  <th class="dropdown-item">Image</th>
+                  <th class="dropdown-item">Name</th>
+                  <th class="dropdown-item">Type</th>
+                  <th class="dropdown-item">Brewery</th>
+                  <th class="dropdown-item">Abv%</th>
+                 </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+               </table>
+               <button class="btn button btn-danger" style="display:none;" id="close_search">x</button>
+
             </div>
           </div>
         </nav>
@@ -164,7 +167,7 @@
 
         <div id="footer_links" class="container">
           <div class="row" style="margin-left:0;margin-right:0;">
-          <div class="col-md-3 footer_menu_divs footer_boxes">
+          <div class="col-md-3 col-sm-12 col-xs-12 footer_menu_divs footer_boxes">
             <h5>Contact Info</h5>
             <hr class="footer_menu_hr">
             <ul class="footer_menu">
@@ -173,7 +176,7 @@
               <li class="footer_li_links"><a href="mailto:info@lorem.com"><i class="fa fa-envelope footer_fa" aria-hidden="true"></i>info@lorem.com</a></li>
             </ul>
           </div>
-          <div class="col-md-3 footer_menu_divs footer_boxes">
+          <div class="col-md-3 col-sm-12 col-xs-12 footer_menu_divs footer_boxes">
             <h5>Our Company</h5>
             <hr class="footer_menu_hr">
             <ul class="footer_menu footer_menu_lists">
@@ -182,7 +185,7 @@
               <li class="footer_li_links"><a href="/contact">Contact</a></li>
             </ul>
           </div>
-          <div class="col-md-3 footer_menu_divs footer_boxes">
+          <div class="col-md-3 col-sm-12 col-xs-12 footer_menu_divs footer_boxes">
             <h5>Usefull Links</h5>
             <hr class="footer_menu_hr">
             <ul class="footer_menu footer_menu_lists">
@@ -191,7 +194,7 @@
               <li class="footer_li_links"><a href="/privacy-policy">Privacy Policy</a></li>
             </ul>
           </div>
-          <div class="col-md-3 footer_menu_divs">
+          <div class="col-md-3 col-sm-12 col-xs-12 footer_menu_divs">
             <h5>Your Account</h5>
             <hr class="footer_menu_hr">
             <ul class="footer_menu footer_menu_lists">
@@ -212,7 +215,7 @@
     <script>
     $(document).ready(function() {
     //Preloader
-    preloaderFadeOutTime = 500;
+    preloaderFadeOutTime = 3000;
     function hidePreloader() {
     var preloader = $('.spinner-wrapper');
     preloader.fadeOut(preloaderFadeOutTime);

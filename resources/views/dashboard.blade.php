@@ -4,7 +4,7 @@
 
 @section('account_pages')
 <!-- User's dashboard -->
-<div class="card">
+<div class="card dashboard_card">
   <div class="card-header">Dashboard</div>
 
   <div class="card-body">
