@@ -199,7 +199,6 @@ Route::get('login/{provider}', 'SocialController@redirect');
 Route::get('login/{provider}/callback','SocialController@Callback');
 
 Route::get('/redirect', 'Auth\LoginController@redirectToProvider');
-
 Route::get('/callback', 'Auth\LoginController@handleProviderCallback');
 
 Auth::routes();

@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Socialite;
+use App\User;
+use App\Product;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -40,37 +42,47 @@ class LoginController extends Controller
     }
 
     public function redirectToProvider()
-    {
-        return Socialite::driver('google')->redirect();
-    }
+{
+    return Socialite::driver('google')->redirect();
+}
 
-    public function handleProviderCallback()
-    {
-        try {
-            $user = Socialite::driver('google')->user();
-        } catch (\Exception $e) {
-            return redirect('/login');
-        }
-        // only allow people with @company.com to login
-        if(explode("@", $user->email)[1] !== 'company.com'){
-            return redirect()->to('/');
-        }
-        // check if they're an existing user
-        $existingUser = User::where('email', $user->email)->first();
-        if($existingUser){
-            // log them in
-            auth()->login($existingUser, true);
-        } else {
-            // create a new user
-            $newUser                  = new User;
-            $newUser->name            = $user->name;
-            $newUser->email           = $user->email;
-            $newUser->google_id       = $user->id;
-            $newUser->avatar          = $user->avatar;
-            $newUser->avatar_original = $user->avatar_original;
-            $newUser->save();
-            auth()->login($newUser, true);
-        }
-        return redirect()->to('/home');
+public function handleProviderCallback()
+{
+    try {
+        $user = Socialite::driver('google')->user();
+    } catch (\Exception $e) {
+        return redirect('/login');
     }
+    
+    // check if they're an existing user
+    $existingUser = User::where('email', $user->email)->first();
+    if($existingUser){
+        // log them in
+        auth()->login($existingUser, true);
+    } else {
+        // create a new user
+        $newUser                  = new User;
+        $newUser->name            = $user->name;
+        $newUser->email           = $user->email;
+        $newUser->google_id       = $user->id;
+        $newUser->avatar          = $user->avatar;
+        $newUser->avatar_original = $user->avatar_original;
+        $newUser->billing_name = null;
+        $newUser->billing_address = null;
+        $newUser->billing_town = null;
+        $newUser->billing_state = null;
+        $newUser->billing_zipcode = null;
+        $newUser->billing_country = null;
+        $newUser->shipping_name = null;
+        $newUser->shipping_address = null;
+        $newUser->shipping_town = null;
+        $newUser->shipping_state = null;
+        $newUser->shipping_zipcode = null;
+        $newUser->shipping_country = null;
+        $newUser->save();
+        auth()->login($newUser, true);
+    }
+    $products = Product::all();
+    return view('home')->with('products', $products);
+  }
 }
